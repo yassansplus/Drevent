@@ -1,0 +1,52 @@
+/*:::::Front index Page ::::::*/
+
+$blue: #0076a3;
+$red: #dd1839;
+$black: #111010;
+$bluebtn : #005b7f;
+$grey: #7f7f7f;
+$lightBlue: #00aeef;
+body{
+  background: url("../../../../image/front/bcgModal.png") no-repeat;
+  background-size: cover;
+
+}
+.registerModal{
+
+  .modal-dialog{
+    //margin-top: 0px;
+    .modal-content{
+      border: 2px solid $lightBlue;
+      width: 477px;
+      margin: auto;
+      @media screen and (max-width: 720px) {
+        width: 310px;
+      }
+    }
+
+  }
+  .btnBorderBlue{
+    font-size: 2.5rem;
+  }
+  .modal-footer{
+    border-top: 0px;
+  }
+  button{
+    opacity: 1;
+    transition: all linear 0.2s;
+  }
+  .toClose{
+
+    position: absolute;
+    top: -19px;
+    right: -18px;
+    font-size: 35px;
+    background: $lightBlue;
+    padding: 3px 10px;
+    border-radius: 100%;
+    color: white;
+  }
+}
+a:hover{
+  text-decoration: none;
+}

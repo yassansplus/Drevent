@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <link rel="stylesheet" href="{{ asset('assets/css/profil/createProfil.css') }}">
+    {% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row mb30">
+            <div class="col-md-9 col-md-offset-1">
+                <h1>Mon association <span class="subtitleProfilCreation">- createur</span></h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            {{ form_start(form)}}
+            <div class="col-md-6 mb30 ">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name, {'attr': {'class': 'form-control inputProfil'}}) }}
+            </div>
+            <div class="col-md-6 mb30">
+                {{ form_label(form.place) }}
+
+                {{ form_widget(form.place, {'attr': {'class': 'form-control inputProfil'}}) }}
+            </div>
+            <div class="col-md-6 mb30">
+                <label for="user_input_schedule">
+                    horaire <a href="#" data-toggle="tooltip" title="exemple : 8h - 18h"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+                </label>
+
+                {{ form_widget(form.schedule, {'attr': {'class': 'form-control inputProfil'}}) }}
+            </div>
+            <div class="col-md-6 mb30">
+                <label for="user_input_username">
+                    nom d'utilisateur <a href="#" data-toggle="tooltip" title="Il permet à d'autre gérant de se connecter sur le meme profil!"><i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+                </label>
+                <input type="text" name="user_input_username" id="user_input_username" required class="form-control inputProfil">
+            </div>
+
+            <input class="btn btnValideProfil pull-right" type="submit" value="Créer mon association"/>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

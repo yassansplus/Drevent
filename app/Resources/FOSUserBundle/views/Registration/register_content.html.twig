@@ -1,0 +1,71 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {#{{ form_widget(form) }}#}
+    <div class="registerModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><a href="{{ path('homepage') }}" class="toClose" aria-hidden="true">&times;</a></button>
+                    <h2 class="modal-title text-center " id="myModalLabel">Inscription</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+
+                        {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder': 'Nom'} } ) }}
+                        {{ form_errors(form.name) }}
+
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.surname, { 'attr': {'class': 'form-control', 'placeholder': 'prenom'} } ) }}
+                        {{ form_errors(form.surname) }}
+
+                    </div>
+                    {#<div class="col-md-6">#}
+                        {#{{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'identifiant'} } ) }}#}
+                        {#{{ form_errors(form.username) }}#}
+
+                    {#</div>#}
+                    <div class="col-md-12">
+
+                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'} }) }}
+                        {{ form_errors(form.email) }}
+
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'} }) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Confirmer le mot de passe'} } ) }}
+                        {{ form_errors(form.plainPassword.first) }}
+
+
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_widget(form.roles.children[0]) }} {{ form_label(form.roles.children[0]) }}
+                    </div>
+                    <div class="col-md-6 ">
+                        {{ form_widget(form.roles.children[1]) }} {{ form_label(form.roles.children[1]) }}
+                    </div>
+
+                    <div     class="registerError col-md-12"></div>
+
+
+                    <input type="submit" value="S'INSCRIRE" class="btn btnBorderBlue w100 btnSUbmitRegister" />
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <p class="text-center">
+                            <a href="{{ path("fos_user_security_login") }}"  data-toggle="modal" data-target="#myModal">
+                                Se connecter
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{{ form_end(form) }}

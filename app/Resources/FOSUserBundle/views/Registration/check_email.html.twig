@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body  %}
+<div class="registerModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><a href="{{ path('homepage') }}" class="toClose" aria-hidden="true">&times;</a></button>
+                <h2 class="modal-title text-center " id="myModalLabel">Inscription</h2>
+            </div>
+            <div class="modal-body">
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        <a href="{{ path("fos_user_security_login") }}"  data-toggle="modal" data-target="#myModal">
+                            Se connecter
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock body %}

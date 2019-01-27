@@ -1,0 +1,299 @@
+
+$blue: #0076a3;
+$red: #dd1839;
+$black: #111010;
+$bluebtn : #005b7f;
+$green : #36a064;
+$grey: #7f7f7f;
+$lightBlue: #00aeef;
+/*::::::::::::::FONT :::::::::::::::::::::*/
+
+/* Thin */
+@font-face {
+  font-family: 'Thin';
+  src: url(fonts/Montserrat-Thin.otf);
+}
+/* Regular */
+@font-face {
+  font-family: 'Regular';
+  src: url(fonts/Montserrat-Regular.otf);
+}
+/* Light */
+@font-face {
+  font-family: 'Light';
+  src: url(fonts/Montserrat-Light.otf);
+}
+/* Bold */
+@font-face {
+  font-family: 'Bold';
+  src: url(fonts/Montserrat-Bold.otf);
+}
+
+body{
+  font-size: 14px;
+  font-family: "Light";
+}
+/*::::::::::END FONT ::::::::::::::::::*/
+
+.cblue{
+  color: $blue;
+}
+.cred{
+  color: $red;
+}
+.cblack {
+  color: $black;
+}
+
+.cblueBtn {
+  color: $bluebtn
+}
+.cblueLight{
+
+  color: $lightBlue;
+
+}
+.cwhite{
+  color:white
+}
+.cgrey{
+  color: $grey;
+}
+
+/*::::::::::: margin :::::::::::::::::::::*/
+$type:0;
+@while $type < 105{
+  .mt#{$type}{margin-top: 0px+$type ;}
+  $type:$type + 5;
+}
+
+$type:0;
+
+@while $type < 105{
+  .mb#{$type}{margin-bottom: 0px+$type;}
+  $type:$type + 5;
+}
+.mb150{margin-bottom: 150px;}
+$type:0;
+
+@while $type < 105{
+  .mr#{$type}{margin-right: 0px+$type;}
+  $type:$type + 5;
+}
+
+$type:0;
+
+@while $type < 105{
+  .ml#{$type}{margin-left: 0px+$type;}
+  $type:$type + 5;
+}
+.w100{
+  width: 100%;}
+/*::::::::::: padding :::::::::::::::::::::*/
+
+$type:0;
+@while $type < 105{
+  .pt#{$type}{padding-top: 0px+$type;}
+  $type:$type + 5;
+}
+
+$type:0;
+
+@while $type < 105{
+  .pb#{$type}{padding-bottom: 0px+$type;}
+  $type:$type + 5;
+}
+
+$type:0;
+
+@while $type < 105{
+  .pr#{$type}{padding-right: 0px+$type;}
+  $type:$type + 5;
+}
+
+$type:0;
+
+@while $type < 105{
+  .pl#{$type}{padding-left: 0px+$type!important;}
+  $type:$type + 5;
+}
+
+.p5{
+  padding: 5px;
+}
+
+.p0{
+  padding: 0px;
+}
+@mixin btn($bcg,$border-radius, $colorFont, $fsz, $ff) {
+  background: $bcg!important;
+  border-radius: $border-radius;
+  color: $colorFont;
+  padding: 7px 28px;
+  font-size: $fsz;
+  text-transform: uppercase;
+  font-family: $ff;
+  font-weight: bold;
+  transition: all linear 0.5s;
+}
+
+.btn-blue{
+  @include btn($blue, 50px, "white",1.8rem,"REGULAR");
+}
+.btn-submit{
+  @include btn("white", 5px, $grey,2.3rem,"LIGHT");
+  padding: 3px 10px;
+  border-style: dashed;
+  &:hover{
+    border-style: solid;
+    border-color: $grey;
+    background: $grey!important;
+    color: white;
+  }
+}
+
+.btnBorderBlue{
+  @include btn("white", 50px, $grey,14px,"LIGHT");
+  text-transform: initial;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+  border: 1.5px solid $bluebtn;
+
+
+}
+.btnBorderRed{
+  @include btn("white", 50px, $grey,14px,"LIGHT");
+  text-transform: initial;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+  border: 1.5px solid $red;
+}
+.btnBorderGreen{
+  @include btn("white", 50px, $green,14px,"LIGHT");
+  text-transform: initial;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
+  border: 1.5px solid $green;
+
+
+}
+/*:::::::::::::::::MENU :::::::::::::::::*/
+.navbar{
+  margin-bottom: 0;
+}
+.navbar-default{
+  border-radius: 0px; ;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  .navbar-nav{
+    li{
+      a{
+        color: $grey;
+      }
+    }
+  }
+}
+
+h2,h3{
+  color: $red;
+  font-family: "REGULAR";
+  font-weight: bold;
+}
+.modal{
+  background: url("../../image/front/bcgModal.png") no-repeat;
+  background-size: cover;
+  .modal-dialog{
+    margin-top: 250px;
+  .modal-content{
+    border: 2px solid $lightBlue;
+    width: 477px;
+    margin: auto;
+    @media screen and (max-width: 720px) {
+      width: 310px;
+    }
+  }
+  }
+  .btnBorderBlue{
+    font-size: 2.5rem;
+  }
+  .modal-footer{
+    border-top: 0px;
+  }
+  button{
+    opacity: 1;
+    transition: all linear 0.2s;
+  }
+  .toClose{
+
+    position: absolute;
+    top: -19px;
+    right: -18px;
+    font-size: 35px;
+    background: $lightBlue;
+    padding: 3px 10px;
+    border-radius: 100%;
+    color: white;
+  }
+}
+.pac-container {
+  background-color: #FFF;
+  z-index: 1000000;
+  position: fixed;
+  display: inline-block;
+  float: left;
+}
+.modal-backdrop{
+  z-index: 10;
+}​
+.modal{
+  z-index: 20;
+}
+.bootstrap-tagsinput {
+  width: 100% !important;
+}
+.badge-success{
+  background: #28a745;
+}
+.badge-danger{
+  background: #dc3545;
+}
+.badge-warning{
+  background: #ffc107;
+}
+.fstQueryInput.fstQueryInputExpanded{
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.fstMultipleMode .fstControls {
+  box-sizing: border-box;
+  padding: 0px;
+  overflow: hidden;
+  width: 100%;
+  cursor: text;
+  border:none;
+}
+.fstElement{
+  border:none;
+  display: block;
+}
+.fstMultipleMode.fstActive, .fstMultipleMode.fstActive .fstResults{
+  box-shadow: none;
+}
+.subtitleProfilCreation{
+  font-size: 18px;
+  color: $blue!important;
+}

@@ -1,0 +1,2 @@
+@ECHO OFF
+start /MIN "" "C:\wamp64\wampmanager.exe" && composer install && cd .\web\dev\ && npm install && npm install gulp && gulp build && start /MIN cmd /k "cd ..\.. && php bin/console doctrine:database:create & php bin/console doctrine:generate:entities AppBundle && php bin/console doctrine:schema:update --force && php bin/console server:run" && gulp

@@ -1,0 +1,34 @@
+
+app_publication:
+    resource: "@AssociationBundle/Controller/PublicationController.php"
+    type:     annotation
+
+
+etudiant:
+    resource: "@EtudiantBundle/Controller/"
+    type:     annotation
+
+
+association:
+    resource: "@AssociationBundle/Controller/"
+    type:     annotation
+
+
+association_validation:
+    resource: "@AppBundle/Controller/AssociationVerifController.php"
+    type:     annotation
+    prefix:   /validation-association
+
+etudiant_validation:
+    resource: "@AppBundle/Controller/EtudiantVerifController.php"
+    type:     annotation
+    prefix:   /validation-etudiant
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+fos_js_routing:
+  resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

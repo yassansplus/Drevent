@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('assets/css/profil/association.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/profil/etudiant.css') }}">
+    {{ parent() }}
+
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="col-lg-9">
+
+            <div class="mb-3 Card_custom-card--border_5wJKy card">
+                <div class="table-responsive-xl">
+                    <table class="mb-0 table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="align-middle bt-0">Favori</th>
+                            <th class="align-middle bt-0">Association</th>
+                            <th class="align-middle bt-0">Status</th>
+                            {#<th class="align-middle bt-0">Tasks Completed</th>#}
+                            <th class="align-middle bt-0">People</th>
+                            <th class="align-middle bt-0 text-right">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for association in associations    %}
+
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="text-inverse"><a href="#">
+                                            <i class="fa fa-fw fa-lg fa-star-o mt25"></i></a>
+                                    </div>
+                                </td>
+                                <td class="align-middle">
+                                    <div><a href="#">{{ association.name }}</a></div>
+                                    <span>Derniere Publication: <br>{{ (association.publications| first).publication| date("d/m/Y") }}</span></td>
+                                <td class="align-middle"><span class="badge badge-success ">Active</span>
+                                </td>
+                                <td class="align-middle">
+                                    <div class="avatar-image avatar-image--loaded">
+                                        <div class="avatar avatar--md avatar-image__image">
+                                            <div class="avatar__content"><img
+                                                        src="http://bootdey.com/img/Content/avatar/avatar1.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-right">
+                                    <div class="btn-group">
+                                        <button type="button" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false"
+                                                class="dropdown-toggle btn btn-link"><i class="fa fa-gear mt20"></i>
+                                        </button>
+                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                             class="dropdown-menu dropdown-menu-right">
+                                            <div>
+
+                                                <a type="button" tabindex="0" class="dropdown-item">
+                                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                                Suivre l'Association
+                                                </a>
+                                            </div>
+                                            <div>
+
+                                                <a type="button" tabindex="0" class="dropdown-item"><i
+                                                            class="fa fa-fw fa-folder-open mr-2"></i>View
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

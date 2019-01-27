@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/default/front/ccm.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mb50 mt50">
+            <div class="col-md-12">
+                <h2>
+                    Comment ça marche
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="col-md-8 col-md-offset-2 light">
+                    Bienvenue sur EFREIHUB ! Ce site est fait pour faciliter votre vie associative au sein de l’EFREI. Vous y trouverez toutes les informations relatives aux différentes associations de l’école. Pour cela rien de plus simple : Il suffit de vous créer un compte étudiant grâce auquel vous pourrez les rejoindre, les contacter, avoir accès à leurs informations sur les horaires et lieux de rencontre.
+                </p>
+            </div>
+        </div>
+        <div class="row mb5. mt100 mb50">
+            <div class="col-md-12">
+                <h2>
+                    Etudiant ou Association
+                </h2>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6 borderRightSpecial" >
+                <div class="col-md-12">
+                    <div class="col-md-6 col-md-offset-3 mb10">
+
+                        <img src="{{ asset('assets/image/icons/studentadd.png') }}" class="w100">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+
+                        <p class="text-center">
+                            Inscrivez vous
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="col-md-6 col-md-offset-3 ">
+
+                        <img src="{{ asset('assets/image/icons/userInterro.png') }}" class="w100 ">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+
+                        <p class="text-center">
+                         Choisissez le type de profil
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb100">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row mb50">
+            <div class="col-md-12">
+                <h2>
+                    Pour les étudiants
+                </h2>
+            </div>
+        </div>
+        <div class="row mb70">
+            <div class="col-md-4">
+                <div class="col-md-8 col-md-offset-4">
+
+                    <img src="{{ asset('assets/image/icons/calendar.png') }}" class="w100">
+                </div>
+            </div>
+            <div class="col-md-8 mt50">
+                <p class="col-md-8 col-md-offset-3">
+                    Il est souvent difficile d’avoir accès aux nouveautés et évènements des associations. Via EFREIHUB, vous pourrez facilement avoir accès aux messages postés par les associations que vous suivez, afin d’être au courant de leurs actualités et des événements qu’ils organisent.
+
+                </p>
+            </div>
+        </div>
+        <div class="row mb100">
+            <div class="col-md-8 mt10">
+                <p class="col-md-8 col-md-offset-2">
+                    Vous n’êtes dans aucune associations et ne savez pas laquelle peut vous correspondre ? Pas de soucis ! Votre compte sera associé à un certain nombre de tags que vous choisirez, décrivant vos centres d’intérêt. Ces tags seront mis en relation avec ceux des différentes associations afin de vous proposer des suggestions d’associations susceptibles de vous plaire.
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-8 ">
+
+                    <img src="{{ asset('assets/image/icons/jumelles.png') }}" class="w100">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

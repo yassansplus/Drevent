@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <link rel="stylesheet" href="{{ asset('assets/css/profil/createProfil.css') }}">
+    {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row mb30">
+        <div class="col-md-9 col-md-offset-1">
+            <h1>Mon étudiant <span class="subtitleProfilCreation">- creation</span></h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        {{ form_start(form) }}
+        <div class="col-md-12 mb30 ">
+            <div class="col-md-6 mb30">
+                <label for="">promo</label>
+                {{ form_widget(form.promo, {'attr': {'class': 'form-control inputProfil'}}) }}
+            </div>
+            <div class="col-md-6 mb30">
+                <label for="">date de naissance</label>
+                {{ form_widget(form.birthday, {'attr': {'class': 'form-control inputProfil date'}}) }}
+            </div>
+
+        </div>
+
+        <input class="btn btnValideProfil pull-right" type="submit" value="Valider"/>
+        {{ form_end(form) }}
+    </div>
+
+
+
+    {% endblock %}

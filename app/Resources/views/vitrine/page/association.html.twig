@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/default/front/association.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="services">
+            {% set boxNumber = 0 %}
+            {% set boxColor = "" %}
+            {% for association in associations %}
+
+                {% set boxNumber = boxNumber + 1 %}
+
+                {% if  (boxNumber + 2) % 4 == 0 or (boxNumber + 3) % 4 == 0 %}
+                    {% set boxColor = "snip1174 navy col-md-6" %}
+                {% else %}
+                    {% set boxColor = "snip1174 red col-md-6" %}
+                {% endif %}
+
+                <div class="col-md-6">
+                    <figure class={{ boxColor }}>
+                        <img src = "{{ association.user.picture }}" alt="sq-sample33" a/>
+                        <figcaption>
+                            <h2>{{ association.name }}</h2>
+                            <p>
+                                {{ association.description }}
+                            </p>
+                            {#//TODO: mettre un lien pour suivre l'assoc#}
+                            <a href="#">Suivre</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

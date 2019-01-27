@@ -1,0 +1,50 @@
+/*:::::Front index Page ::::::*/
+
+$blue: #0076a3;
+$red: #dd1839;
+$black: #111010;
+$bluebtn : #005b7f;
+$grey: #7f7f7f;
+$lightBlue: #00aeef;
+.banner{
+  background: url("../../../../image/front/event.png") no-repeat;
+  background-size: cover;
+  height: 350px;
+  padding-top: 80px;
+  h2{
+    color: white;
+  }
+  .cblue{
+    color: $blue!important;
+    font-size: 60px;
+  }
+
+}
+.form-control{
+  border-color: $grey;
+}
+input.form-control{
+  border-radius:50px;
+  margin-bottom: 10px;
+}
+textarea.form-control{
+  padding-left: 30px ;
+  padding-top: 10px;
+  border-radius: 25px;
+  min-height: 200px ;
+  margin-bottom: 10px;
+}
+.bannerMiddlePage{
+  margin: 50px auto;
+  background: $lightBlue;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+p{
+  text-align: justify;
+}
+@media screen and (max-width: 720px) {
+  .banner{
+    height: 550px;
+  }
+}

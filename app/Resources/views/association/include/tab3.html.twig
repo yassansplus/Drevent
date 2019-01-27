@@ -1,0 +1,72 @@
+
+<div class="tab-pane fade in active " id="tab1">
+    <div class="row mb30">
+        <div class="col-md-9 col-md-offset-1">
+            <h1 class="cred">Mes publications <span class="subtitleProfilCreation cblueLight">- association</span></h1>
+            <hr>
+        </div>
+    </div>
+
+    {% for publication in association.publications |sort|reverse %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1 blockPublication">
+                <div class="col-md-10">
+                    <h5><span class="cblueLight">{{ association.user.name }}</span><span> - a publier un evenement le: </span>
+                    </h5>
+                    <span>{{ publication.publication |date('j/m/Y') }}</span>
+                </div>
+                <div class="col-md-2 mt10">
+                    <div class="col-md-6">
+                        <i class="fa fa-thumbs-o-up fa-2x cblue" aria-hidden="true"></i>
+                        <span class="cblue">18</span>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa fa-thumbs-o-down fa-2x cred" aria-hidden="true"></i>
+                        <span class="cred">10</span>
+                    </div>
+                </div>
+
+                <div class="col-md-12 liker">
+                    <span class="">18 personnes aiment ça </span>
+                    {#<a href="#" class="btn btnBorderBlue pull-right right text-lowercase"> Voir la publication</a>#}
+                </div>
+
+                <div class="col-md-12">
+                    {{ publication.description | raw }}
+                </div>
+                <hr>
+                <div class="col-md-7 mb20">
+                    {% for commentaire in publication.commentaires   %}
+                        <div class="commentaire mb5">
+
+                            <p>
+                                <span class="cblue"> {{ commentaire.etudiant.user.name }} : </span>
+                                {{ commentaire.commentary }}
+                            </p>
+                        </div>
+                        <div class="pl15 mb15">
+
+                            <a class="pr15" href="">J'aime</a>
+
+                            <a href="">Je n'aime pas</a>
+                            &nbsp; il y a 8 min
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="col-md-12 commentZone">
+                    <textarea onkeyup="textAreaAdjust(this)" name="" class="form-control" id="" cols="30" rows="10"
+                              placeholder="Exprimez-vous ! "></textarea>
+                    <input type="submit" class="btn btnBorderGreen pull-right">
+                </div>
+
+
+            </div>
+
+        </div>
+    {% endfor %}
+
+</div>
+

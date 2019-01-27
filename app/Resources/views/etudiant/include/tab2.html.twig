@@ -1,0 +1,75 @@
+<div class="tab-pane fade in active " id="tab1">
+    <div class="row mb30">
+        <div class="col-md-9 col-md-offset-1">
+            <h1>Résultats <span class="subtitleProfilCreation">- étudiant</span></h1>
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="col-lg-10">
+
+        <div class="mb-3 Card_custom-card--border_5wJKy card">
+            <div class="table-responsive-xl">
+                <table class="mb-0 table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="align-middle bt-0">Favori</th>
+                        <th class="align-middle bt-0">Association</th>
+                        <th class="align-middle bt-0">Status</th>
+                        {#<th class="align-middle bt-0">Tasks Completed</th>#}
+                        <th class="align-middle bt-0">People</th>
+                        <th class="align-middle bt-0 text-right">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for association in associations %}
+
+                        <tr>
+                            <td class="align-middle">
+                                <div class="text-inverse"><a href="#">
+                                        <i class="fa fa-fw fa-lg fa-star-o mt25"></i></a>
+                                </div>
+                            </td>
+                            <td class="align-middle">
+                                <div><a href="#">{{ association.name }}</a></div>
+                                {% if (association.publications| first).publication is defined %}
+                                    <span>Derniere Publication: <br>{{ (association.publications| first).publication| date("d/m/Y") }}</span>
+                                {% else %}
+                                    <span> Pas de publication </span>
+                                {% endif %}
+                            </td>
+                            <td class="align-middle"><span class="badge badge-success ">Active</span>
+                            </td>
+                            <td class="align-middle">
+                                <div class="avatar-image avatar-image--loaded">
+                                    <div class="avatar avatar--md avatar-image__image">
+                                        <div class="avatar__content"><img
+                                                    src="http://bootdey.com/img/Content/avatar/avatar1.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle text-right">
+                                <div class="btn-group">
+                                    <span data-id="{{ association.id }}" aria-haspopup="true"
+                                          class="dropdown-toggle btn btn-link addAssoc">
+                                        <i class="fa fa-gear mt15"></i>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+

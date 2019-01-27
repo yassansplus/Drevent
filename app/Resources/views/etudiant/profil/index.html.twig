@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset('assets/css/profil/association.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/profil/etudiant.css') }}">
+    {{ parent() }}
+
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 pl0 pr0">
+                <div class="card hovercard mt0">
+                    <div class="card-background">
+                        <img class="card-bkimg" alt="" src="{{ asset('assets/image/front/event.jpg') }}">
+
+                    </div>
+                    <div class="useravatar">
+                        <img alt="" src="https://avatars3.githubusercontent.com/u/34783077?s=460&v=4">
+                    </div>
+                    <div class="card-info name">
+                        <span class="card-title">{{ etudiant.user.name }}</span>
+
+                    </div>
+                </div>
+                <div class="btn-pref btn-group btn-group-justified btn-group-lg " role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span
+                                    class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <div class="hidden-xs">Mes événements</div>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="container-fluid mt50">
+                    <div class="col-md-3">
+                        <div class="col-md-5 col-md-offset-3">
+
+                            {#<img class="img-circle img-responsive" alt="" src={{ asset('assets/image/profilPics/'~user.profil.profilPic) }}>#}
+                        </div>
+                        <div class="col-md-12">
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <span>
+                                <i class="fa fa-address-card-o"
+                                   aria-hidden="true"></i>
+                            </span>
+                            {{ etudiant.user.name }}                             {{ etudiant.user.surname }}
+                        </div>
+                        <div class="col-md-12">
+                            <span><i class="fa fa-map-marker"
+                                     aria-hidden="true"></i>
+                            </span>
+                            {#{{ association.place }}#}
+                        </div>
+                        <div class="col-md-12"><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+                            suit :
+                            {{ etudiant.associations | length }}
+                            association(s)
+
+                        </div>
+                        {#<div class="col-md-12"><span><i class="fa fa-calendar" aria-hidden="true"></i></span> Dernier#}
+                            {#évenements:#}
+                        {#</div>#}
+
+
+                    </div>
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            {% if app.request.get('_route') == "etudiant_homepage"  %}
+                                {% include 'etudiant/include/tab1.html.twig' %}
+                                {% elseif app.request.get('_route') == "result"   %}
+                                    {% include 'etudiant/include/tab2.html.twig' %}
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/js/profil/association.js') }}">
+{% endblock %}

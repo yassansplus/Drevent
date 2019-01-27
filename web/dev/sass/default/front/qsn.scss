@@ -1,0 +1,35 @@
+/*:::::Front index Page ::::::*/
+
+$blue: #0076a3;
+$red: #dd1839;
+$black: #111010;
+$bluebtn : #005b7f;
+$grey: #7f7f7f;
+$lightBlue: #00aeef;
+
+h2{
+  font-weight: initial;
+  text-align: center;
+}
+p{
+  text-align: justify;
+}
+.borderRightSpecial{
+  border-right: 1px solid $grey;
+}
+hr{
+  border-top: 1px solid $grey;
+}
+p{
+  font-family: "REGULAR";
+  font-size: 1.8REM;
+  font-weight: bold;
+}
+p.text-center{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.light{
+  font-family: "THIN";
+  color: $grey;
+}
